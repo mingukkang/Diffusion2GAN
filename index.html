@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <!-- <meta name="description" content="DESCRIPTION META TAG"> -->
+
+    <meta property='og:title' content='Diffusion2GAN for One-step Text-to-Image Synthesis. arXiv2024'/>
+    <meta property='og:url' content='https://mingukkang.github.io/Diffusion2GAN/'/>
+    <meta property="og:image" content="static/images/banner.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG"> -->
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png"> -->
+    <!-- <meta name="twitter:card" content="summary_large_image"> -->
+    <!-- Keywords for your paper to be indexed by-->
+    <!-- <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Distilling Diffusion Models into Conditional GANs</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/tab_gallery.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+    <link rel="stylesheet" href="juxtapose/css/juxtapose.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/magnifier.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/image_card_fader.css">
+    <link rel="stylesheet" href="./static/css/image_card_slider.css">
+</head>
+
+<body>
+  <section class="hero banner">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Diffusion2GAN:<br> Distilling Diffusion Models into Conditional GANs</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://mingukkang.github.io/">Minguk Kang</a><sup>1,2</sup>,</span>
+            </span>
+            <span class="author-block">
+              <a href="https://richzhang.github.io/">Richard Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.connellybarnes.com/work/">Connelly Barnes</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://research.adobe.com/person/sylvain-paris/">Sylvain Paris</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://suhakwak.github.io/">Suha Kwak</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jaesik.info/">Jaesik Park</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://research.adobe.com/person/eli-shechtman/">Eli Shechtman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan Zhu</a><sup>4</sup>,</span>
+            </span>
+            <span class="author-block">
+              <a href="https://taesung.me/">Taesung Park</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>POSTECH,</span>
+            <span class="author-block"><sup>2</sup>Adobe Research,</span>
+            <span class="author-block"><sup>3</sup>Seoul National University,</span>
+            <span class="author-block"><sup>4</sup>Carnegie Mellon University</span>
+          </div>
+
+          <div class="is-size-5 publication-venue">
+            in arXiv 2024
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2303.05511"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/mingukkang/GigaGAN/tree/main/evaluation"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>E-LatentLPIPS</span>
+                  </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/mingukkang/GigaGAN/tree/main/evaluation"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Evaluation</span>
+                  </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/ZjxtuDQkOPY"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <br>
+              <span class="link-block">
+                <a href="https://www.cs.cmu.edu/~junyanz/talks/GigaGAN_slides.pptx"
+                   class="external-link button is-normal is-rounded is-dark">
+                   <svg style="width:16px;height:16px;margin-left:-0px;margin-right:6px" width="16px" height="16px" viewBox="0 0 44 44"><path fill="currentColor" d="M10,26h8a2,2,0,0,0,2-2V14a2,2,0,0,0-2-2H10a2,2,0,0,0-2,2V24A2,2,0,0,0,10,26Zm0-12h8V24H10Zm15,4H35a1,1,0,0,0,0-2H25a1,1,0,0,0,0,2Zm0-4h6a1,1,0,0,0,0-2H25a1,1,0,0,0,0,2Zm0,8h4a1,1,0,0,0,0-2H25a1,1,0,0,0,0,2ZM42,2H24a2,2,0,0,0-4,0H2A2,2,0,0,0,0,4V6A2,2,0,0,0,2,8V32a2,2,0,0,0,2,2H21v2.59l-5.71,5.71a1,1,0,1,0,1.41,1.41L22,38.41l5.29,5.29a1,1,0,1,0,1.41-1.41L23,36.59V34H40a2,2,0,0,0,2-2V8a2,2,0,0,0,2-2V4A2,2,0,0,0,42,2ZM40,32H4V8H40ZM42,6H2V4H42ZM25,26H35a1,1,0,0,0,0-2H25a1,1,0,0,0,0,2Z"></path>
+                   </svg>
+                  <span>Slides</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="#bibtex"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-obp"></i>
+                  </span>
+                  <span>BibTex</span>
+                </a>
+              </span> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h3 class="title is-4">Diffusion2GAN can learn noise-to-image mapping of a target diffusion model</h3>
+      <div class="content has-text-justified">
+        <p>
+          <!--<b>A large 1B-parameter GAN model for text-to-image, with a competitive FID, disentangled latent space, and a fast upsampler for generating 4K outputs.</b>--> 
+        </p>
+      </div>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-t2i0">
+          <img id="myt2i0" src="./static/images/ode_learning.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i0">
+        <img id="myt2i0" src="./static/images/ode_learning3.pdf"
+        class="interpolation-image"/>
+      </div>
+      <div class="item item-t2i0">
+        <img id="myt2i0" src="./static/images/ode_learning4.pdf"
+        class="interpolation-image"/>
+      </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/ode_learning1.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/ode_learning2.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/ode_learning5.pdf"
+          class="interpolation-image"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop has-text-centered">
+    <h3 class="title is-4">One-step image synthesis using Diffusion2GAN</h3>
+    <div class="content has-text-justified">
+      <p>
+        <!--<b>A large 1B-parameter GAN model for text-to-image, with a competitive FID, disentangled latent space, and a fast upsampler for generating 4K outputs.</b>-->
+        <b>Diffusion2GAN can generate a 512px/1024px image at an interactive speed of 0.09/0.16 second.</b> By learning the direct mapping from Gaussian noises to their corresponding images, Diffusion2GAN enables one-step image synthesis.
+        <br> 
+      </p>
+    </div>
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item item-t2i1">
+        <img id="myt2i0" src="./static/images/Text2img.pdf"
+        class="interpolation-image"/>
+      </div>
+      <div class="item item-t2i1">
+        <img id="myt2i1" src="./static/images/Text2img1.pdf"
+        class="interpolation-image"/>
+      </div>
+      <div class="item item-t2i1">
+        <img id="myt2i1" src="./static/images/Text2img2.pdf"
+        class="interpolation-image"/>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-4">Two-step 4K image generation using Diffusion2GAN and GigaGAN</h2>
+      <div class="content has-text-justified">
+        <p>
+          <!--<b>Diffusion2GAN is employed to produce low-resolution base images (128px) at an interactive speed of 0.16~0.17 seconds. Optionally, the GigaGAN upsampler can be introduced to enhance these images into high-quality 4k resolution.</b>-->
+          <b>The images generated by Diffusion2GAN can be seamlessly upsampled to 4k res using GigaGAN upsampler.</b> This indicates that we can generate low-resolution preview images using Diffusion2GAN and then enhance some preferred images to 4k resolution using the GigaGAN upsampler.
+          <br> 
+        </p>
+      </div>
+      <!-- The expanding image container -->
+      <div class="tab_container">
+        <!-- Close the image -->
+        <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+
+        <!-- Expanded image -->
+        <div id="juxtapose-embed" data-startingposition="30%" data-animate="true">
+        </div>
+
+        <div>
+          <div id="juxtapose-hidden"></div>
+        </div>
+        
+        <!-- Image text -->
+        <div id="imgtext"></div>
+      </div>
+
+      <!-- The grid: four columns -->
+      <div class="tab_row">
+        <div class="tab_column">
+          <img src="./static/images/corgi_input.jpeg"  onclick="tab_gallery_click('corgi');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/waterfall_input.jpeg" onclick="tab_gallery_click('waterfall');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/jelly_input.jpeg" onclick="tab_gallery_click('jelly');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/monet_input.jpeg" onclick="tab_gallery_click('monet');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/unicorn_input.jpeg" onclick="tab_gallery_click('unicorn');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/fire_input.jpeg" onclick="tab_gallery_click('fire');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/canon_input.jpeg" onclick="tab_gallery_click('canon');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/mushroom_input.jpeg" onclick="tab_gallery_click('mushroom');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/castle_input.jpeg" onclick="tab_gallery_click('castle');">
+        </div>
+        <div class="tab_column">
+          <img src="./static/images/handsome_input.jpeg" onclick="tab_gallery_click('handsome');">
+        </div>
+      </div>
+
+      
+      
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose a method to distill a complex multistep diffusion model into a single-step conditional GAN student model, dramatically accelerating inference while preserving image quality.
+            Our approach interprets the diffusion distillation as a paired image-to-image translation task, using noise-to-image pairs of the diffusion model's ODE trajectory. For efficient regression loss computation, we propose E-LatentLPIPS, a Perceptual loss in the latent space of the diffusion model with an ensemble of augmentations. 
+            Despite dataset construction costs, E-LatentLPIPS converges more efficiently than many existing distillation methods. 
+            Furthermore, we adapt a diffusion model to construct a multi-scale discriminator with a text alignment loss to build an effective conditional GAN-based formulation.
+            We demonstrate that our one-step generator outperforms cutting-edge one-step diffusion distillation models, DMD, SDXL-Turbo, and SDXL-Lightning, on the zero-shot COCO benchmark.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  
+    <!--/ Matting. -->
+    <div class="container is-max-desktop">
+    
+    <!-- Latent space editing applications -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Diffusion2GAN Framework</h2>
+
+        <!-- Prompt Interpolation image -->
+        <h3 class="title is-4">Diffusion2GAN one-step generator</h3>
+        
+        <div class="content has-text-centered">
+            <img src="./static/images/G_architecture.pdf" width="90%">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We collect diffusion model's <b>output latents</b> along with <b>input noises</b> and <b>prompts</b>. Then, the generator is trained to map <b>noise</b> and <b>prompt</b> to the <b>target latent</b> using our proposed <b>E-LatentLPIPS regression loss</b> and the <b>GAN loss</b>. While the output of the
+            generator can be decoded by the SD latent decoder into RGB pixels, it is a compute intensive operation that is never performed during training.
+          </p>
+          <br>
+        </div>
+        <!-- Prompt Interpolation image -->
+        <h3 class="title is-4">E-LatentLPIPS for latent space distillation</h3>
+        
+        <div class="content has-text-centered">
+            <img src="./static/images/elatentlpips_v3.pdf" width="90%">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Training a single iteration with <b>LPIPS</b> takes <b>117ms</b> and <b>15.0GB</b> extra memory on NVIDIA A100, whereas our <b>E-LatentLPIPS</b> requires <b>12.1ms</b> and <b>0.6GB</b> on the same device. Consequently, <b>E-latentLPIPS</b> accelerates the <b>perceptual loss computation time</b> by <b>9.7×</b> compared to <b>LPIPS</b>, while simultaneously reducing memory consumption.
+          </p>
+          <br>
+        </div>
+
+        <!-- Prompt Interpolation image -->
+        <h3 class="title is-4">Diffusion2GAN multi-scale conditional discriminator</h3>
+        <div class="content has-text-centered">
+            <img src="./static/images/D_architecture.pdf" width="90%">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We reuse the <b>pre-trained weights</b> from the teacher model and augment it with <b>multi-scale input and output branches</b>. Concretely, we feed the resized version of input latents to each downsampling block of the encoder. For the decoder part, we enforce the <b>discriminator</b> to make <b>real/fake predictions</b> at <b>three places</b> at each scale: <b>before, at, and after</b> the <b>skip connection</b>. This multi-scale adversarial training further improves image quality.
+          </p>
+          <br>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Latent space editing applications -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+        <!-- Prompt Interpolation image -->
+        <h3 class="title is-4">Single image reconstruction using LPIPS variants</h3>
+        
+        <div class="content has-text-centered">
+            <img src="./static/images/LatentLPIPS_recon.pdf" width="100%">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We conduct an image reconstruction experiment by directly optimizing a single latent with different loss functions. Reconstruction with <b>LPIPS</b> roughly reproduces the target image, but at the cost of needing to decode into pixels. <b>LatentLPIPS</b> alone cannot precisely reconstruct the image. However, our ensembled augmentation, <b>E-LatentLPIPS</b>, can more precisely reconstruct the target while operating directly in the latent space. 
+          </p>
+        </div>
+
+        <!-- Prompt Interpolation image -->
+        <h3 class="title is-4">Comparison with cutting-edge distillation models</h3>
+        
+        <div class="content has-text-centered">
+            <img src="./static/images/Radar_chart_sdxl.pdf" width="80%">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We compare <b>Diffusion2GAN</b> with two concurrent one-step diffusion distillation generators: <b>SDXL-turbo</b> and <b>SDXL-Lightning</b>, as well as their teacher model, <b>SDXL-Base-1.0</b>. Although <b>SDXL-Lightning</b> produces more diverse images compared to <b>Diffusion2GAN</b> and <b>SDXL-Turbo</b>, it does so at the expense of FID and CLIP-score. On the other hand, <b>Diffusion2GAN</b> demonstrates better FID and CLIP-score than <b>SDXL-Turbo</b> and <b>SDXL-Lightning</b> but generates more diverse images compared to <b>SDXL-Turbo</b>.
+          </p>
+          <br>
+        </div>
+        <!-- Prompt Interpolation image -->
+        <h3 class="title is-4">COCO2014 benchmark (Stable Diffusion 1.5)</h3>
+        
+        <div class="content has-text-centered">
+            <img src="./static/images/COCO2014_benchmark.png" width="70%">
+        </div>
+        <div class="content has-text-justified">
+        </div>
+        <!-- Prompt Interpolation image -->
+        <h3 class="title is-4">COCO2017 benchmark (SDXL-Base-1.0)</h3>
+        
+        <div class="content has-text-centered">
+            <img src="./static/images/COCO2017_benchmark.png" width="87%">
+        </div>
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Diverse Image Generation using Diffusion2GAN</h2>
+      <div class="content has-text-justified">
+        <p>
+          <!--<b>A large 1B-parameter GAN model for text-to-image, with a competitive FID, disentangled latent space, and a fast upsampler for generating 4K outputs.</b>-->
+          <b>Diversity and text-to-image alignment of generated images from Diffusion2GAN.</b> Diffusion2GAN can generate more diverse images than SDXL-Turbo while exhibiting better text-to-image alignment than SDXL-Lightning.
+          <br> 
+        </p>
+      </div>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-t2i1">
+          <img id="myt2i0" src="./static/images/Diversity_d2g0.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/Diversity_turbo0.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/Diversity_lightning0.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/Diversity_d2g1.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/Diversity_turbo1.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/Diversity_lightning1.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/Diversity_d2g2.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/Diversity_turbo2.pdf"
+          class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="./static/images/Diversity_lightning2.pdf"
+          class="interpolation-image"/>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <br>
+    <!--/ Matting. -->
+    <div class="container is-max-desktop">
+    
+      <!-- Latent space editing applications -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Related Works</h2>
+          <div class="content has-text-justified">
+            <p>
+              <li>Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Bjorn Ommer. <a href="https://arxiv.org/abs/2112.10752">High-resolution image synthesis with latent diffusion models.</a> In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2022.</li><br>
+              <li>Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, and Robin Rombach. <a href="https://arxiv.org/abs/2307.01952">SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis.</a> In International Conference on Learning Representation (ICLR), 2024.</li><br>
+              <li>Markus Kettunen, Erik Härkönen, and Jaakko Lehtinen. <a href="https://arxiv.org/abs/1906.03973">E-LPIPS: Robust Perceptual Image Similarity via Random Transformation Ensembles.</a> In arXiv preprint arXiv:1906.03973, 2019.</li><br>
+              <li>Tianwei Yin, Michael Gharbi, Richard Zhang, Eli Shechtman, Fredo Durand, William T. Freeman, and Taesung Park. <a href="https://arxiv.org/abs/2311.18828">One-step Diffusion with Distribution Matching Distillation.</a> In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2024.</li><br>
+              <li>Axel Sauer, Dominik Lorenz, Andreas Blattmann, and Robin Rombach. <a href="https://arxiv.org/abs/2311.17042">Adversarial Diffusion Distillation.</a> In arXiv preprint arXiv:2311.17042, 2023.</li><br>
+              <li>Shanchuan Lin, Anran Wang, and Xiao Yang. <a href="https://arxiv.org/abs/2402.13929">SDXL-Lightning: Progressive Adversarial Diffusion Distillation.</a> 	In arXiv preprint arXiv:2402.13929, 2024.</li><br>  
+            </p>
+          </div>
+          <!-- Prompt Interpolation image -->
+        </div>
+      </div>
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Acknowledgements</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We would like to thank Tianwei Yin, Seungwook Kim, Sungyeon Kim for their valuable feedback and comments. Part of this work was done while Minguk Kang was an intern at Adobe Research. Minguk Kang and Suha Kwak were supported by the NRF grant and IITP grant funded by Ministry of Science and ICT, Korea (NRF-2021R1A2C3012728, AI Graduate School (POSTECH): IITP-2019-0-01906). Jaesik Park was supported by the IITP grant funded by the government of South Korea (MSIT) (AI Graduate School (SNU): 2021-0-01343 and AI Innovation Hub: 2021-0-02068). Jun-Yan Zhu was supported by the Packard Fellowship.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title"><a id="bibtex">BibTeX</a></h2>
+    <pre><code>@article{kang2024diffusion2gan,
+  author    = {Kang, Minguk and Zhang, Richard and Barnes, Connelly and Paris, Sylvain and Kwak, Suha and Park, Jaesik and Shechtman, Eli and Zhu, Jun-Yan and Park, Taesung},
+  title     = {{Distilling Diffusion Models into Conditional GANs}},
+  journal={},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website adapted from the following <a href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="juxtapose/js/juxtapose.js"></script>
+
+<script>
+var slider;
+let origImages = [
+  {"src": "./static/images/corgi_input.jpeg", "label": "Generated by SDXL-Diffusion2GAN (512px)",},
+  {"src": "./static/images/corgi_output.jpeg", "label": "8 x Upsampled by GigaGAN (4K)",}
+];
+let origOptions = {
+    "makeResponsive": true,
+    "showLabels": true,
+    "mode": "horizontal",
+    "showCredits": true,
+    "animate": true,
+    "startingPosition": "50"
+};
+
+const juxtaposeSelector = "#juxtapose-embed";
+const transientSelector = "#juxtapose-hidden";
+
+
+function tab_gallery_click(name) {
+  // Get the expanded image
+  let inputImage = {
+    label: "Generated by Diffusion2GAN (512px)",
+  };
+  let outputImage = {
+    label: "8 x Upsampled by GigaGAN (4K)",
+  };
+
+  inputImage.src = "./static/images/".concat(name, "_input.jpeg")
+  outputImage.src = "./static/images/".concat(name, "_output.jpeg")
+
+  let images = [inputImage, outputImage];
+  let options = slider.options;
+  options.callback = function(obj) {
+      var newNode = document.getElementById(obj.selector.substring(1));
+      var oldNode = document.getElementById(juxtaposeSelector.substring(1));
+      console.log(obj.selector.substring(1));
+      console.log(newNode.children[0]);
+      oldNode.replaceChild(newNode.children[0], oldNode.children[0]);
+      //newNode.removeChild(newNode.children[0]);
+      
+  };
+  
+  slider = new juxtapose.JXSlider(transientSelector, images, options);
+};
+
+
+
+(function() {
+    slider = new juxtapose.JXSlider(
+        juxtaposeSelector, origImages, origOptions);
+    //document.getElementById("left-button").onclick = replaceLeft;
+    //document.getElementById("right-button").onclick = replaceRight;
+})();
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  // expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = name;
+  // Show the container element (hidden with CSS)
+  // expandImg.parentElement.style.display = "block";
+
+$(".flip-card").click(function() {
+            console.log("fading in")
+            div_back = $(this).children().children()[1]
+            div_front = $(this).children().children()[0]
+            // console.log($(this).children("div.flip-card-back"))
+            console.log(div_back)
+            $(div_front).addClass("out");
+            $(div_front).removeClass("in");
+
+            $(div_back).addClass("in");
+            $(div_back).removeClass("out");
+
+});
+
+$(".flip-card").mouseleave(function() {
+            console.log("fading in")
+            div_back = $(this).children().children()[1]
+            div_front = $(this).children().children()[0]
+            // console.log($(this).children("div.flip-card-back"))
+            console.log(div_back)
+            $(div_front).addClass("in");
+            $(div_front).removeClass("out");
+
+            $(div_back).addClass("out");
+            $(div_back).removeClass("in");
+
+});
+
+</script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>    
+
+</body>
+</html>
